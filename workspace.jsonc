@@ -1,7 +1,7 @@
 /**
  * this is the main configuration file of your bit workspace.
  * for full documentation, please see: https://bit.dev/docs/workspace/workspace-configuration
- **/{
+ **/ {
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   /**
    * main configuration of the Bit workspace.
@@ -63,6 +63,9 @@
        * uncomment to apply the chosen environment on all components.
        **/
       // "teambit.react/react": { }
+    },
+    "react": {
+      "kcsommers.kc-components/envs/kc-react-env": {}
     }
   }
 }

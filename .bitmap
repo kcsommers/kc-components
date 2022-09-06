@@ -10,76 +10,40 @@
 
 {
     "design/styles/base-styles": {
-        "scope": "",
-        "version": "",
+        "scope": "kcsommers.kc-components",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "kc-components/design/styles/base-styles",
-        "config": {
-            "teambit.html/html": {},
-            "teambit.envs/envs": {
-                "env": "teambit.html/html"
-            }
-        }
+        "rootDir": "kc-components/design/styles/base-styles"
     },
     "design/themes": {
-        "scope": "",
-        "version": "",
+        "scope": "kcsommers.kc-components",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "kc-components/design/themes",
-        "config": {
-            "teambit.html/html": {},
-            "teambit.envs/envs": {
-                "env": "teambit.html/html"
-            }
-        }
+        "rootDir": "kc-components/design/themes"
     },
     "envs/kc-react-env": {
-        "scope": "",
-        "version": "",
+        "scope": "kcsommers.kc-components",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "kc-components/envs/kc-react-env",
-        "config": {
-            "teambit.envs/env": {},
-            "teambit.envs/envs": {
-                "env": "teambit.envs/env"
-            }
-        }
+        "rootDir": "kc-components/envs/kc-react-env"
     },
     "react/providers/base-theme": {
-        "scope": "",
-        "version": "",
+        "scope": "kcsommers.kc-components",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "kc-components/react/providers/base-theme",
-        "config": {
-            "kcsommers.kc-components/envs/kc-react-env": {},
-            "teambit.envs/envs": {
-                "env": "kcsommers.kc-components/envs/kc-react-env"
-            }
-        }
+        "rootDir": "kc-components/react/providers/base-theme"
     },
     "react/ui/button": {
-        "scope": "",
-        "version": "",
+        "scope": "kcsommers.kc-components",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "kc-components/react/ui/button",
-        "config": {
-            "kcsommers.kc-components/envs/kc-react-env": {},
-            "teambit.envs/envs": {
-                "env": "kcsommers.kc-components/envs/kc-react-env"
-            }
-        }
+        "rootDir": "kc-components/react/ui/button"
     },
     "react/ui/loading-spinner": {
-        "scope": "",
-        "version": "",
+        "scope": "kcsommers.kc-components",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "kc-components/react/ui/loading-spinner",
-        "config": {
-            "kcsommers.kc-components/envs/kc-react-env": {},
-            "teambit.envs/envs": {
-                "env": "kcsommers.kc-components/envs/kc-react-env"
-            }
-        }
+        "rootDir": "kc-components/react/ui/loading-spinner"
     },
     "$schema-version": "15.0.0"
 }

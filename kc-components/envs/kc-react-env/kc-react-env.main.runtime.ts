@@ -19,15 +19,14 @@ export class KcReactEnvMain {
   static runtime = MainRuntime;
 
   static async provider([react, envs]: [ReactMain, EnvsMain]) {
-
     //const webpackModifiers: UseWebpackModifiers = {
-      //  previewConfig: [previewConfigTransformer],
-      //  devServerConfig: [devServerConfigTransformer],
+    //  previewConfig: [previewConfigTransformer],
+    //  devServerConfig: [devServerConfigTransformer],
     //};
 
     //const tsModifiers: UseTypescriptModifiers = {
-      //  devConfig: [devConfigTransformer],
-      //  buildConfig: [buildConfigTransformer],
+    //  devConfig: [devConfigTransformer],
+    //  buildConfig: [buildConfigTransformer],
     //};
 
     const KcReactEnvEnv = react.compose([
@@ -77,13 +76,14 @@ export class KcReactEnvMain {
        */
       react.overrideDependencies({
         devDependencies: {
-          // '@types/react': '17.0.3'
+          '@types/react': '17.0.49',
+          '@types/react-dom': '17.0.17',
         },
         peerDependencies: {
-          "react": "^18.1.0",
-          "react-dom": "^18.1.0",
-        }
-      })
+          react: '^18.1.0',
+          'react-dom': '^18.1.0',
+        },
+      }),
     ]);
     envs.registerEnv(KcReactEnvEnv);
     return new KcReactEnvMain();
