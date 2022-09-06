@@ -75,9 +75,9 @@
         "mainFile": "index.ts",
         "rootDir": "kc-components/react/ui/loading-spinner",
         "config": {
-            "teambit.react/react": {},
+            "kcsommers.kc-components/envs/kc-react-env": {},
             "teambit.envs/envs": {
-                "env": "teambit.react/react"
+                "env": "kcsommers.kc-components/envs/kc-react-env"
             }
         }
     },
