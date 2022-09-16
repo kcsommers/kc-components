@@ -33,6 +33,12 @@
         "mainFile": "index.ts",
         "rootDir": "kc-components/react/providers/base-theme"
     },
+    "react/testing/test-component": {
+        "scope": "kcsommers.kc-components",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "kc-components/react/testing/test-component"
+    },
     "react/ui/button": {
         "scope": "kcsommers.kc-components",
         "version": "0.0.1",
