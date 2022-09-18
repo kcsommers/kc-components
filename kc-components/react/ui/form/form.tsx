@@ -59,7 +59,7 @@ export const Form = ({
   return (
     <form className='flex-1'>
       {title && <h1>{title}</h1>}
-      <div className='card m-auto'>
+      <div className={`${useCard ? 'card' : ''}`}>
         {inputs.map((inputProps) => (
           <Input
             {...inputProps}
@@ -68,7 +68,6 @@ export const Form = ({
             }}
           />
         ))}
-
         <Button
           onClick={submitForm}
           showSpinner={isLoading}

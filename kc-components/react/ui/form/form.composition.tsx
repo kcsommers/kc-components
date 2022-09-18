@@ -1,11 +1,13 @@
 import { BaseTheme } from '@kcsommers/kc-components.react.providers.base-theme';
 import React from 'react';
 import { Form } from './form';
+import '@kcsommers/kc-components.design.styles.base-styles';
 
 export const BasicForm = () => {
   return (
     <BaseTheme>
       <Form
+        useCard={true}
         inputs={[
           {
             id: 'name',
