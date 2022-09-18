@@ -1,5 +1,5 @@
 import { LoadingSpinner } from '@kcsommers/kc-components.react.ui.loading-spinner';
-import React, { ReactNode, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './button.module.scss';
 
 export type ButtonTypes =
@@ -12,7 +12,7 @@ export type ButtonTypes =
 export type ButtonSizes = 'lg' | 'md' | 'sm';
 
 export type ButtonProps = {
-  children?: ReactNode;
+  text?: string;
   type?: ButtonTypes;
   size?: ButtonSizes;
   isFullWidth?: boolean;
@@ -22,7 +22,7 @@ export type ButtonProps = {
 };
 
 export function Button({
-  children,
+  text,
   type = 'accent1',
   size = 'md',
   isFullWidth = false,
@@ -61,7 +61,7 @@ export function Button({
       onClick={clicked}
       ref={(el: HTMLButtonElement) => (buttonEl.current = el)}
     >
-      {showSpinner ? <LoadingSpinner size="sm" /> : children}
+      {showSpinner ? <LoadingSpinner size="sm" /> : text}
     </button>
   );
 }

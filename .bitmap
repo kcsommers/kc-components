@@ -63,6 +63,18 @@
             }
         }
     },
+    "react/ui/input": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "kc-components/react/ui/input",
+        "config": {
+            "teambit.envs/envs": {
+                "env": "kcsommers.kc-components/envs/kc-react-env"
+            },
+            "kcsommers.kc-components/envs/kc-react-env": {}
+        }
+    },
     "react/ui/loading-spinner": {
         "scope": "kcsommers.kc-components",
         "version": "0.0.1",
