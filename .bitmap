@@ -87,5 +87,17 @@
             }
         }
     },
+    "utils/type-guards": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "kc-components/utils/type-guards",
+        "config": {
+            "teambit.harmony/node": {},
+            "teambit.envs/envs": {
+                "env": "teambit.harmony/node"
+            }
+        }
+    },
     "$schema-version": "15.0.0"
 }

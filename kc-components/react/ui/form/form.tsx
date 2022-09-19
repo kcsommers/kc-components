@@ -1,5 +1,6 @@
 import { Button, ButtonProps } from '@kcsommers/kc-components.react.ui.button';
 import { Input, InputProps } from '@kcsommers/kc-components.react.ui.input';
+import { isPromise } from '@kcsommers/kc-components.utils.type-guards';
 import React, { useMemo, useState } from 'react';
 
 export type FormProps = {
@@ -11,10 +12,6 @@ export type FormProps = {
     e: React.MouseEvent,
     inputValues: [string, any][]
   ) => void | Promise<{ successMessage: string; errorMessage: string }>;
-};
-
-const isPromise = <T,>(p: any): p is Promise<T> => {
-  return typeof p === 'object' && typeof p.then === 'function';
 };
 
 export const Form = ({
