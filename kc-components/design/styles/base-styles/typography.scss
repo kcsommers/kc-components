@@ -1,0 +1,59 @@
+.text-xs {
+  font-size: 12px;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.text-md {
+  font-size: 16px;
+}
+
+.text-lg {
+  font-size: 20px;
+}
+
+.text-xl {
+  font-size: 24px;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.color-primary {
+  color: var(--primary-color);
+}
+
+.color-accent1 {
+  color: var(--accent1-color);
+}
+
+.color-background {
+  color: var(--background-color);
+}
+
+.color-foreground {
+  color: var(--foreground-color);
+}
+
+.color-onPrimary {
+  color: var(--onPrimary-color);
+}
+
+.color-danger {
+  color: var(--danger-color);
+}
+
+.color-warning {
+  color: var(--warning-color);
+}
+
+.color-success {
+  color: var(--success-color);
+}
