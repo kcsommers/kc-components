@@ -7,29 +7,50 @@ export const BasicForm = () => {
   return (
     <BaseTheme>
       <Form
+        title='Basic Form'
         useCard={true}
         inputs={[
           {
             id: 'name',
+            name: 'Name',
             placeholder: 'Full Name',
             label: {
               text: 'Name',
               for: 'name',
             },
+            validation: {
+              required: true,
+            },
+            value: '',
           },
           {
             id: 'email',
+            name: 'Email',
             placeholder: 'Email',
             label: {
               text: 'Email',
               for: 'email',
             },
+            validation: {
+              required: true,
+            },
+            value: '',
           },
         ]}
         submitButton={{
           text: 'Submit',
         }}
-      ></Form>
+        onSubmit={(e, submittedInputs) =>
+          new Promise((res) => {
+            setTimeout(() => {
+              res({
+                successMessage: 'Form Submitted Successfully',
+              });
+              console.log('submitted inputs:::: ', submittedInputs);
+            }, 3000);
+          })
+        }
+      />
     </BaseTheme>
   );
 };

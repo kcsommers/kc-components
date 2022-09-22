@@ -2,13 +2,19 @@ import React, { ReactNode, useState } from 'react';
 
 export type InputProps = {
   id: string;
+  value: any;
   type?: string;
-  value?: any;
   name?: string;
   placeholder?: string;
   label?: {
     text: string;
     for: string;
+  };
+  validation?: {
+    required?: boolean;
+    pattern?: string;
+    min?: number;
+    max?: number;
   };
   onChange?: (e: React.ChangeEvent) => void;
 };
