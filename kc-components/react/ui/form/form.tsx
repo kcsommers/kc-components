@@ -5,6 +5,8 @@ import { isPromise } from '@kcsommers/kc-components.utils.type-guards';
 import { cloneDeep } from 'lodash';
 import React, { useMemo, useState } from 'react';
 
+type FormInputConfig = Omit<InputProps, 'onChange'>;
+
 export type FormProps = {
   inputs: Omit<InputProps, 'onChange'>[];
   useCard?: boolean;
@@ -12,7 +14,7 @@ export type FormProps = {
   title?: string;
   onSubmit?: (
     e: React.MouseEvent | KeyboardEvent,
-    inputValues: Omit<InputProps, 'onChange'>[]
+    inputValues: FormInputConfig[]
   ) => void | Promise<{ successMessage?: string; errorMessage?: string }>;
 };
 
@@ -26,28 +28,33 @@ export const Form = ({
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const inputValuesMap = useMemo(
-    () => new Map(inputs.map((i) => [i.id, cloneDeep(i)])),
-    []
+  const [inputsMap, setInputMap] = useState<{
+    [inputId: string]: FormInputConfig;
+  }>(
+    inputs?.reduce((map, input) => {
+      map[input.id] = cloneDeep(input);
+      return map;
+    }, {})
   );
-  const [inputMessages, setInputMessages] = useState({});
   const validateForm = (): boolean => {
     let isValid = true;
-    const inputMessages = {};
-    inputs.forEach((input) => {
+    const newMap: {
+      [inputId: string]: FormInputConfig;
+    } = {};
+    Object.values(inputsMap).forEach((input) => {
       if (!input.validation) {
         return;
       }
       let message = '';
-      const inputValue = inputValuesMap.get(input.id)?.value;
-      if (input.validation.required && !inputValue && inputValue !== 0) {
+      if (input.validation.required && !input.value && input.value !== 0) {
         isValid = false;
-        message = `*${input.name} required`;
+        message = `*Required`;
       }
+      input.validation.message = message;
+      newMap[input.id] = input;
       // @TODO rest of validations
-      inputMessages[input.id] = message;
     });
-    setInputMessages(inputMessages);
+    setInputMap(newMap);
     return isValid;
   };
 
@@ -62,7 +69,7 @@ export const Form = ({
     if (!onSubmit) {
       return;
     }
-    const submitRes = onSubmit(e, Array.from(inputValuesMap.values()));
+    const submitRes = onSubmit(e, Array.from(Object.values(inputsMap)));
     if (isPromise(submitRes)) {
       setIsLoading(true);
       submitRes
@@ -87,19 +94,12 @@ export const Form = ({
     <form className='flex-1'>
       <div className={`${useCard ? 'card' : ''}`}>
         {title && <h2>{title}</h2>}
-        {inputs.map((inputProps) => (
+        {Object.values(inputsMap).map((inputProps) => (
           <div key={inputProps.id}>
-            {inputMessages[inputProps.id] && (
-              <p className='text-sm mb-05 text-bold color-danger'>
-                {inputMessages[inputProps.id]}
-              </p>
-            )}
             <Input
               {...inputProps}
               onChange={(e: React.ChangeEvent) => {
-                const inputModel = inputValuesMap.get(inputProps.id)!;
-                inputModel.value = e.target['value'];
-                inputValuesMap.set(inputProps.id, inputModel);
+                inputsMap[inputProps.id].value = e.target['value'];
               }}
             />
           </div>

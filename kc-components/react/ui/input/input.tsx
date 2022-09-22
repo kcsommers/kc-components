@@ -15,6 +15,7 @@ export type InputProps = {
     pattern?: string;
     min?: number;
     max?: number;
+    message?: string;
   };
   onChange?: (e: React.ChangeEvent) => void;
 };
@@ -26,6 +27,7 @@ export const Input = ({
   id,
   placeholder,
   label,
+  validation,
   onChange,
 }: InputProps) => {
   const [inputValue, setInputValue] = useState(value);
@@ -45,12 +47,25 @@ export const Input = ({
       onChange={inputValueChanged}
     />
   );
+
   return label ? (
     <label htmlFor={label.for}>
-      {label.text}
+      <span className='flex'>
+        {label.text}
+        {validation?.message && (
+          <p className='text-sm color-danger text-light ml-05'>
+            {validation.message}
+          </p>
+        )}
+      </span>
       {inputEl}
     </label>
   ) : (
-    inputEl
+    <>
+      {validation?.message && (
+        <p className='text-sm mb-05 color-danger'>{validation.message}</p>
+      )}
+      {inputEl}
+    </>
   );
 };
