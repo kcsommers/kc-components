@@ -27,6 +27,18 @@
         "mainFile": "index.ts",
         "rootDir": "kc-components/envs/kc-react-env"
     },
+    "react/hooks": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "kc-components/react/hooks",
+        "config": {
+            "teambit.envs/envs": {
+                "env": "kcsommers.kc-components/envs/kc-react-env"
+            },
+            "kcsommers.kc-components/envs/kc-react-env": {}
+        }
+    },
     "react/providers/base-theme": {
         "scope": "kcsommers.kc-components",
         "version": "0.0.1",
