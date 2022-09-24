@@ -1,7 +1,7 @@
 /**
  * this is the main configuration file of your bit workspace.
  * for full documentation, please see: https://bit.dev/docs/workspace/workspace-configuration
- **/ {
+ **/{
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   /**
    * main configuration of the Bit workspace.
@@ -40,8 +40,10 @@
     "policy": {
       "dependencies": {
         "@testing-library/react": "13.4.0",
+        "@types/lodash": "4.14.185",
         "classnames": "2.3.1",
-        "color": "4.2.3"
+        "color": "4.2.3",
+        "lodash": "4.17.21"
       },
       "peerDependencies": {}
     },

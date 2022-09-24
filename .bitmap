@@ -27,6 +27,18 @@
         "mainFile": "index.ts",
         "rootDir": "kc-components/envs/kc-react-env"
     },
+    "react/hooks": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "kc-components/react/hooks",
+        "config": {
+            "teambit.envs/envs": {
+                "env": "kcsommers.kc-components/envs/kc-react-env"
+            },
+            "kcsommers.kc-components/envs/kc-react-env": {}
+        }
+    },
     "react/providers/base-theme": {
         "scope": "kcsommers.kc-components",
         "version": "0.0.1",
@@ -84,6 +96,30 @@
             "kcsommers.kc-components/envs/kc-react-env": {},
             "teambit.envs/envs": {
                 "env": "kcsommers.kc-components/envs/kc-react-env"
+            }
+        }
+    },
+    "react/ui/nav-bar": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "kc-components/react/ui/nav-bar",
+        "config": {
+            "teambit.envs/envs": {
+                "env": "kcsommers.kc-components/envs/kc-react-env"
+            },
+            "kcsommers.kc-components/envs/kc-react-env": {}
+        }
+    },
+    "utils/type-guards": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "kc-components/utils/type-guards",
+        "config": {
+            "teambit.harmony/node": {},
+            "teambit.envs/envs": {
+                "env": "teambit.harmony/node"
             }
         }
     },

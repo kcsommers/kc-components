@@ -3,6 +3,7 @@
 @import './media-queries.scss';
 @import './flex.scss';
 @import './spacing.scss';
+@import './typography.scss';
 
 * {
   box-sizing: border-box;
@@ -18,6 +19,17 @@ body {
 h1 {
   font-size: 40px;
   margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 input,
