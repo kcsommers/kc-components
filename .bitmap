@@ -11,7 +11,7 @@
 {
     "design/styles/base-styles": {
         "scope": "kcsommers.kc-components",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "kc-components/design/styles/base-styles"
     },
@@ -23,105 +23,63 @@
     },
     "envs/kc-react-env": {
         "scope": "kcsommers.kc-components",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "kc-components/envs/kc-react-env"
     },
     "react/hooks": {
-        "scope": "",
-        "version": "",
+        "scope": "kcsommers.kc-components",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "kc-components/react/hooks",
-        "config": {
-            "teambit.envs/envs": {
-                "env": "kcsommers.kc-components/envs/kc-react-env"
-            },
-            "kcsommers.kc-components/envs/kc-react-env": {}
-        }
+        "rootDir": "kc-components/react/hooks"
     },
     "react/providers/base-theme": {
         "scope": "kcsommers.kc-components",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "kc-components/react/providers/base-theme"
     },
     "react/testing/test-component": {
         "scope": "kcsommers.kc-components",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "kc-components/react/testing/test-component"
     },
     "react/ui/button": {
         "scope": "kcsommers.kc-components",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
-        "rootDir": "kc-components/react/ui/button",
-        "config": {
-            "kcsommers.kc-components/envs/kc-react-env": {},
-            "teambit.envs/envs": {
-                "env": "kcsommers.kc-components/envs/kc-react-env"
-            }
-        }
+        "rootDir": "kc-components/react/ui/button"
     },
     "react/ui/form": {
-        "scope": "",
-        "version": "",
-        "mainFile": "index.ts",
-        "rootDir": "kc-components/react/ui/form",
-        "config": {
-            "kcsommers.kc-components/envs/kc-react-env": {},
-            "teambit.envs/envs": {
-                "env": "kcsommers.kc-components/envs/kc-react-env"
-            }
-        }
-    },
-    "react/ui/input": {
-        "scope": "",
-        "version": "",
-        "mainFile": "index.ts",
-        "rootDir": "kc-components/react/ui/input",
-        "config": {
-            "teambit.envs/envs": {
-                "env": "kcsommers.kc-components/envs/kc-react-env"
-            },
-            "kcsommers.kc-components/envs/kc-react-env": {}
-        }
-    },
-    "react/ui/loading-spinner": {
         "scope": "kcsommers.kc-components",
         "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "kc-components/react/ui/loading-spinner",
-        "config": {
-            "kcsommers.kc-components/envs/kc-react-env": {},
-            "teambit.envs/envs": {
-                "env": "kcsommers.kc-components/envs/kc-react-env"
-            }
-        }
+        "rootDir": "kc-components/react/ui/form"
+    },
+    "react/ui/input": {
+        "scope": "kcsommers.kc-components",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "kc-components/react/ui/input"
+    },
+    "react/ui/loading-spinner": {
+        "scope": "kcsommers.kc-components",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "kc-components/react/ui/loading-spinner"
     },
     "react/ui/nav-bar": {
-        "scope": "",
-        "version": "",
+        "scope": "kcsommers.kc-components",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "kc-components/react/ui/nav-bar",
-        "config": {
-            "teambit.envs/envs": {
-                "env": "kcsommers.kc-components/envs/kc-react-env"
-            },
-            "kcsommers.kc-components/envs/kc-react-env": {}
-        }
+        "rootDir": "kc-components/react/ui/nav-bar"
     },
     "utils/type-guards": {
-        "scope": "",
-        "version": "",
+        "scope": "kcsommers.kc-components",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "kc-components/utils/type-guards",
-        "config": {
-            "teambit.harmony/node": {},
-            "teambit.envs/envs": {
-                "env": "teambit.harmony/node"
-            }
-        }
+        "rootDir": "kc-components/utils/type-guards"
     },
     "$schema-version": "15.0.0"
 }

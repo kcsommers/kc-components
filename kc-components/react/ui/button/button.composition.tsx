@@ -5,7 +5,7 @@ import { Button } from './button';
 export const MediumPrimaryButton = () => {
   return (
     <BaseTheme>
-      <Button type="primary">Medium Primary</Button>
+      <Button type='primary' text='Medium Primary' />
     </BaseTheme>
   );
 };
@@ -13,7 +13,7 @@ export const MediumPrimaryButton = () => {
 export const MediumAccentButton = () => {
   return (
     <BaseTheme>
-      <Button>Medium Accent</Button>
+      <Button text='Medium Accent' />
     </BaseTheme>
   );
 };
@@ -21,9 +21,7 @@ export const MediumAccentButton = () => {
 export const SmallDangerButton = () => {
   return (
     <BaseTheme>
-      <Button type="danger" size="sm">
-        Small Danger
-      </Button>
+      <Button type='danger' size='sm' text='Small Danger' />
     </BaseTheme>
   );
 };
@@ -31,7 +29,7 @@ export const SmallDangerButton = () => {
 export const LoadingButton = () => {
   return (
     <BaseTheme>
-      <Button showSpinner={true}>Loading Button</Button>
+      <Button showSpinner={true} text='Loading Button' />
     </BaseTheme>
   );
 };
