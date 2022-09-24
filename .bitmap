@@ -99,6 +99,18 @@
             }
         }
     },
+    "react/ui/nav-bar": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "kc-components/react/ui/nav-bar",
+        "config": {
+            "teambit.envs/envs": {
+                "env": "kcsommers.kc-components/envs/kc-react-env"
+            },
+            "kcsommers.kc-components/envs/kc-react-env": {}
+        }
+    },
     "utils/type-guards": {
         "scope": "",
         "version": "",
