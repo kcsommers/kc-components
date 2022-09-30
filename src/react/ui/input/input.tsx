@@ -37,6 +37,7 @@ export const Input = ({
     onChange && onChange(e);
   };
 
+  console.log();
   const inputEl = (
     <input
       type={type}
