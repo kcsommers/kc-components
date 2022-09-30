@@ -1,0 +1,64 @@
+@import '../../../design/styles/base-styles/base-styles.scss';
+
+.btn {
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  box-shadow: var(--box-shadow);
+  max-width: 100%;
+  font-size: 1rem;
+
+  &.btn_primary {
+    background-color: var(--primary-color);
+    color: var(--on-primary-color);
+    &:hover,
+    &:focus {
+      background-color: var(--primary-active-color);
+    }
+  }
+
+  &.btn_accent1 {
+    background-color: var(--accent1-color);
+    color: var(--on-accent1-color);
+    &:hover,
+    &:focus {
+      background-color: var(--accent1-active-color);
+    }
+  }
+
+  &.btn_danger {
+    background-color: var(--danger-color);
+    color: var(--on-danger-color);
+    &:hover,
+    &:focus {
+      background-color: var(--danger-active-color);
+    }
+  }
+}
+
+.btn_md {
+  padding: 0rem 3rem;
+  height: 50px;
+
+  @include for-phone-only {
+    padding: 0rem 1rem;
+  }
+}
+
+.btn_sm {
+  padding: 0.5rem;
+  font-size: 16px;
+  @include for-phone-only {
+    padding: 0.15rem;
+  }
+}
+
+.btn_full_width {
+  width: 100%;
+}
