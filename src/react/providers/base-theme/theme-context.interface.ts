@@ -1,4 +1,4 @@
-import { ITheme } from '@kcsommers/kc-components.design.themes';
+import { ITheme } from '../../../design/themes/theme.interface';
 
 export interface IThemeContext {
   currentTheme: ITheme;

@@ -1,9 +1,11 @@
-import { IBaseThemeSchema, ITheme, THEME_LIGHT } from '@kcsommers/kc-components.design.themes';
 import React, { useMemo, useState } from 'react';
+import { IBaseThemeSchema } from '../../../design/themes/base-theme-schema.interface';
+import { THEME_LIGHT } from '../../../design/themes/light.theme';
+import { ITheme } from '../../../design/themes/theme.interface';
 import { THEME_CONTEXT } from './theme-context';
 
-export function computeCssVars<T>(
-  theme: T,
+export function computeCssVars(
+  theme: IBaseThemeSchema,
   prefix?: string
 ): React.CSSProperties {
   return Object.entries(theme)
@@ -15,7 +17,7 @@ export function computeCssVars<T>(
     .reduce((acc, [key, val]) => {
       acc[key] = val;
       return acc;
-    }, {});
+    }, {} as IBaseThemeSchema);
 }
 
 export type ThemeProviderProps = {

@@ -1,6 +1,6 @@
-import { LoadingSpinner } from '@kcsommers/kc-components.react.ui.loading-spinner';
 import React, { useEffect, useRef } from 'react';
-import styles from './button.module.scss';
+import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
+import styles from './Button.module.scss';
 
 export type ButtonTypes =
   | 'primary'
@@ -61,7 +61,7 @@ export function Button({
       onClick={clicked}
       ref={(el: HTMLButtonElement) => (buttonEl.current = el)}
     >
-      {showSpinner ? <LoadingSpinner size="sm" /> : text}
+      {showSpinner ? <LoadingSpinner size='sm' /> : text}
     </button>
   );
 }

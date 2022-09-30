@@ -1,7 +1,7 @@
-import { ThemeColorTypes } from '@kcsommers/kc-components.design.themes';
-import { useTheme } from '@kcsommers/kc-components.react.providers.base-theme';
 import React from 'react';
-import styles from './loading-spinner.module.scss';
+import { ThemeColorTypes } from '../../../design/themes/theme-color-types.type';
+import { useTheme } from '../../providers/base-theme/theme-context';
+import styles from './LoadingSpinner.module.scss';
 
 export type LoadingSpinnerProps = {
   size?: 'lg' | 'md' | 'sm';

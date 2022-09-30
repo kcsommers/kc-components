@@ -1,1 +1,1 @@
-export * from './type-guards';
+export * from './is-promise';

@@ -1,9 +1,9 @@
-import { useKeydown } from '@kcsommers/kc-components.react.hooks';
-import { Button, ButtonProps } from '@kcsommers/kc-components.react.ui.button';
-import { Input, InputProps } from '@kcsommers/kc-components.react.ui.input';
-import { isPromise } from '@kcsommers/kc-components.utils.type-guards';
 import { cloneDeep } from 'lodash';
 import React, { useState } from 'react';
+import { isPromise } from '../../../utils/type-guards/is-promise';
+import { useKeydown } from '../../hooks/use-keydown';
+import { Button, ButtonProps } from '../Button';
+import { Input, InputProps } from '../Input';
 
 type FormInputConfig = Omit<InputProps, 'onChange'>;
 
