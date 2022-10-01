@@ -83,13 +83,13 @@ module.exports = (env) => {
         remotes: {},
         exposes: {
           './ui/Button': './src/react/ui/Button/Button.tsx',
-          './ui/Form': './src/react/ui/Form/Form.tsx',
-          './ui/Input': './src/react/ui/Input/Input.tsx',
-          './ui/LoadingSpinner':
-            './src/react/ui/LoadingSpinner/LoadingSpinner.tsx',
-          './ui/Navbar': './src/react/ui/Navbar/Navbar.tsx',
-          './hooks/use-keydown': './src/react/hooks/use-keydown.tsx',
-          '/providers/base-theme': './src/react/providers/base-theme/index.ts',
+          // './ui/Form': './src/react/ui/Form/Form.tsx',
+          // './ui/Input': './src/react/ui/Input/Input.tsx',
+          // './ui/LoadingSpinner':
+          //   './src/react/ui/LoadingSpinner/LoadingSpinner.tsx',
+          // './ui/Navbar': './src/react/ui/Navbar/Navbar.tsx',
+          // './hooks/use-keydown': './src/react/hooks/use-keydown.tsx',
+          // '/providers/base-theme': './src/react/providers/base-theme/index.ts',
         },
         shared: {
           ...deps,
