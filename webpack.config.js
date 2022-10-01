@@ -103,22 +103,22 @@ module.exports = (env) => {
           },
         },
       }),
-      new MiniCssExtractPlugin({
-        filename: env.development ? '[name].css' : '[name].[hash].css',
-        chunkFilename: env.development ? '[id].css' : '[id].[hash].css',
-      }),
+      // new MiniCssExtractPlugin({
+      //   filename: env.development ? '[name].css' : '[name].[hash].css',
+      //   chunkFilename: env.development ? '[id].css' : '[id].[hash].css',
+      // }),
       new HtmlWebpackPlugin({
         // HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles
         template: './index.html',
         excludeChunks: ['components'],
       }),
-      new ForkTsCheckerWebpackPlugin({
-        // Speeds up TypeScript type checking and ESLint linting (by moving each to a separate process)
-        typescript: {
-          memoryLimit: 4096,
-        },
-      }),
-      new EnvironmentPlugin(['ASSET_PATH']),
+      // new ForkTsCheckerWebpackPlugin({
+      //   // Speeds up TypeScript type checking and ESLint linting (by moving each to a separate process)
+      //   typescript: {
+      //     memoryLimit: 4096,
+      //   },
+      // }),
+      // new EnvironmentPlugin(['ASSET_PATH']),
     ],
   };
 };
