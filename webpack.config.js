@@ -11,65 +11,78 @@ module.exports = (env) => {
   return {
     entry: env.development ? './src/playground.tsx' : './src/index.tsx',
     ...(!env.development ? {} : { devtool: 'eval-source-map' }),
-
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.scss'],
-      plugins: [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })],
-    },
-    output: {
-      publicPath: process.env.ASSET_PATH || '/',
+      extensions: ['.ts', '.tsx', '.js'],
     },
     module: {
       rules: [
         {
-          test: /\.(js)$/,
-          exclude: /node_modules/,
-          use: ['babel-loader'],
-        },
-        {
-          test: /\.tsx?$/,
+          test: /\.(js|jsx|tsx|ts)$/,
           loader: 'ts-loader',
-          options: {
-            transpileOnly: true,
-          },
-          exclude: /dist/,
-        },
-        {
-          test: /\.module\.s(a|c)ss$/,
-          use: [
-            env.development ? 'style-loader' : MiniCssExtractPlugin.loader, // append to dom : externalize css
-            {
-              loader: 'css-loader', // process @import, url()
-              options: {
-                modules: true,
-                sourceMap: env.development,
-              },
-            },
-            'postcss-loader',
-            {
-              loader: 'sass-loader', // scss to css
-              options: {
-                sourceMap: env.development,
-              },
-            },
-          ],
-        },
-        {
-          test: /\.s(a|c)ss$/,
-          exclude: /\.module.(s(a|c)ss)$/,
-          use: [
-            env.development ? 'style-loader' : MiniCssExtractPlugin.loader,
-            'css-loader',
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: env.development,
-              },
-            },
-          ],
+          exclude: /node_modules/,
         },
       ],
     },
+
+    // resolve: {
+    //   extensions: ['.ts', '.tsx', '.js', '.scss'],
+    //   plugins: [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })],
+    // },
+    output: {
+      publicPath: process.env.ASSET_PATH || '/',
+    },
+    // module: {
+    //   rules: [
+    //     {
+    //       test: /\.(js)$/,
+    //       exclude: /node_modules/,
+    //       use: ['babel-loader'],
+    //     },
+    //     {
+    //       test: /\.tsx?$/,
+    //       loader: 'ts-loader',
+    //       options: {
+    //         transpileOnly: true,
+    //       },
+    //       exclude: /dist/,
+    //     },
+    //     {
+    //       test: /\.module\.s(a|c)ss$/,
+    //       use: [
+    //         'style-loader',
+    //         // env.development ? 'style-loader' : MiniCssExtractPlugin.loader, // append to dom : externalize css
+    //         {
+    //           loader: 'css-loader', // process @import, url()
+    //           options: {
+    //             modules: true,
+    //             sourceMap: env.development,
+    //           },
+    //         },
+    //         'postcss-loader',
+    //         {
+    //           loader: 'sass-loader', // scss to css
+    //           options: {
+    //             sourceMap: env.development,
+    //           },
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       test: /\.s(a|c)ss$/,
+    //       exclude: /\.module.(s(a|c)ss)$/,
+    //       use: [
+    //         env.development ? 'style-loader' : MiniCssExtractPlugin.loader,
+    //         'css-loader',
+    //         {
+    //           loader: 'sass-loader',
+    //           options: {
+    //             sourceMap: env.development,
+    //           },
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
     devServer: {
       port: 4000,
       open: true,
@@ -95,10 +108,12 @@ module.exports = (env) => {
           ...deps,
           react: {
             singleton: true,
+            eager: true,
             requiredVersion: deps.react,
           },
           'react-dom': {
             singleton: true,
+            eager: true,
             requiredVersion: deps['react-dom'],
           },
         },
