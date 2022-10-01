@@ -114,6 +114,9 @@ module.exports = (env) => {
       }),
       new ForkTsCheckerWebpackPlugin({
         // Speeds up TypeScript type checking and ESLint linting (by moving each to a separate process)
+        typescript: {
+          memoryLimit: 4096,
+        },
       }),
       new EnvironmentPlugin(['ASSET_PATH']),
     ],
