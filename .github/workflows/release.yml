@@ -18,6 +18,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install Dependencies
         run: npm ci
+      - name: Check Memory
+        run: free -m
       - name: Build App
         run: npm run build
       # - name: Run Tests
