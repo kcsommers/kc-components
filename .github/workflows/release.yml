@@ -20,8 +20,8 @@ jobs:
         run: npm ci
       - name: Build App
         run: npm run build
-      - name: Run Tests
-        run: npm test
+      # - name: Run Tests
+      #   run: npm test
       - name: Generate Changelog
         uses: scottbrenner/generate-changelog-action@master
         id: generate_changelog
