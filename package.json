@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_OPTIONS=--max_old_space_size=4096 webpack --mode=production --env production --progress",
+    "build": "webpack --mode=production --env production --progress",
     "build-local": "rm -rf dist && npm run cpenv:prod && webpack --mode=production --env production --progress",
     "build-local:start": "npm run build && cd dist && PORT=3000 npx serve",
     "cpenv:dev": "cp .env.development .env",

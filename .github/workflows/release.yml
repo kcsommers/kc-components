@@ -21,6 +21,8 @@ jobs:
       - name: Check Memory
         run: free -m
       - name: Build App
+        env:
+          NODE_OPTIONS: '--max-old-space-size=8192'
         run: npm run build
       # - name: Run Tests
       #   run: npm test
@@ -48,6 +50,10 @@ jobs:
           tag_name: ${{ steps.tag_version.outputs.new_tag }}
           release_name: Release ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.generate_changelog.outputs.changelog }}
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
       - name: Push to S3
         uses: jakejarvis/s3-sync-action@master
         with:

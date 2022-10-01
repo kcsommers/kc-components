@@ -49,8 +49,8 @@ module.exports = (env) => {
         {
           test: /\.module\.s(a|c)ss$/,
           use: [
-            'style-loader',
-            // env.development ? 'style-loader' : MiniCssExtractPlugin.loader, // append to dom : externalize css
+            // 'style-loader',
+            env.development ? 'style-loader' : MiniCssExtractPlugin.loader, // append to dom : externalize css
             {
               loader: 'css-loader', // process @import, url()
               options: {
@@ -118,10 +118,10 @@ module.exports = (env) => {
           },
         },
       }),
-      // new MiniCssExtractPlugin({
-      //   filename: env.development ? '[name].css' : '[name].[hash].css',
-      //   chunkFilename: env.development ? '[id].css' : '[id].[hash].css',
-      // }),
+      new MiniCssExtractPlugin({
+        filename: env.development ? '[name].css' : '[name].[hash].css',
+        chunkFilename: env.development ? '[id].css' : '[id].[hash].css',
+      }),
       new HtmlWebpackPlugin({
         // HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles
         template: './index.html',
@@ -129,9 +129,6 @@ module.exports = (env) => {
       }),
       // new ForkTsCheckerWebpackPlugin({
       //   // Speeds up TypeScript type checking and ESLint linting (by moving each to a separate process)
-      //   typescript: {
-      //     memoryLimit: 4096,
-      //   },
       // }),
       // new EnvironmentPlugin(['ASSET_PATH']),
     ],
