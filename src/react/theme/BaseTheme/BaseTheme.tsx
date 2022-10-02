@@ -11,12 +11,12 @@ export interface BaseThemeProps extends React.HTMLAttributes<HTMLDivElement> {
   theme?: ITheme;
 }
 
-export function BaseTheme({
+export const BaseTheme = ({
   theme = THEME_LIGHT,
   children,
   className,
   ...props
-}: BaseThemeProps) {
+}: BaseThemeProps) => {
   return (
     <ThemeProvider
       {...props}
@@ -30,4 +30,4 @@ export function BaseTheme({
       {children}
     </ThemeProvider>
   );
-}
+};

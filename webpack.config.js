@@ -99,10 +99,18 @@ module.exports = (env) => {
           './ui/LoadingSpinner': './src/react/ui/LoadingSpinner/LoadingSpinner',
           './ui/Navbar': './src/react/ui/Navbar/Navbar',
           './utils': './src/utils/index',
-          './theme': [
-            './src/react/theme/BaseTheme/BaseTheme',
-            './src/react/theme/theme-context/theme-context',
-          ],
+          './theme': {
+            import: ['./src/react/theme/index'],
+            name: 'theme',
+          },
+          './design': {
+            import: './src/design/index',
+            name: 'design',
+          },
+          './global-styles': {
+            import: './src/design/styles/base-styles/base-styles.scss',
+            name: 'global-styles',
+          },
         },
         shared: {
           ...deps,
