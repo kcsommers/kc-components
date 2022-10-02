@@ -98,6 +98,10 @@ module.exports = (env) => {
           './ui/Input': './src/react/ui/Input/Input',
           './ui/LoadingSpinner': './src/react/ui/LoadingSpinner/LoadingSpinner',
           './ui/Navbar': './src/react/ui/Navbar/Navbar',
+          './ui/Layout': {
+            import: './src/react/ui/Layout/Layout',
+            name: 'layout',
+          },
           './utils': './src/utils/index',
           './theme': {
             import: ['./src/react/theme/index'],
@@ -131,6 +135,7 @@ module.exports = (env) => {
       new HtmlWebpackPlugin({
         // HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles
         template: './public/index.html',
+        excludeChunks: ['kc_components'], // <-- seems to break HMR if this isn't here
       }),
       // new ForkTsCheckerWebpackPlugin({
       //   // Speeds up TypeScript type checking and ESLint linting (by moving each to a separate process)

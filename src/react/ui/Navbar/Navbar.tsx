@@ -1,11 +1,11 @@
 import React from 'react';
 
-export type NavBarProps = {
+export type NavbarProps = {
   childrenLeft: JSX.Element;
   childrenRight: JSX.Element;
 };
 
-export const NavBar = ({ childrenLeft, childrenRight }: NavBarProps) => {
+export const Navbar = ({ childrenLeft, childrenRight }: NavbarProps) => {
   return (
     <nav className='border-bottom'>
       <div className='flex flex-space-between p-2'>
