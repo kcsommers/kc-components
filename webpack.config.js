@@ -6,6 +6,7 @@ const { ModuleFederationPlugin } = require('webpack').container;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const EnvironmentPlugin = require('webpack').EnvironmentPlugin;
 const deps = require('./package.json').dependencies;
+const { MFLiveReloadPlugin } = require('@module-federation/fmr');
 
 module.exports = (env) => {
   return {
@@ -127,6 +128,11 @@ module.exports = (env) => {
             requiredVersion: deps['react-dom'],
           },
         },
+      }),
+      new MFLiveReloadPlugin({
+        port: 4000, // the port your app runs on
+        container: 'kc_components', // the name of your app, must be unique
+        standalone: true, // false uses chrome extention
       }),
       new MiniCssExtractPlugin({
         filename: env.development ? '[name].css' : '[name].[hash].css',
