@@ -21,7 +21,7 @@ export type ButtonProps = {
   onClick?: (e: React.MouseEvent) => void;
 };
 
-export function Button({
+export const Button = ({
   text,
   type = 'accent1',
   size = 'md',
@@ -29,7 +29,7 @@ export function Button({
   isDisabled = false,
   showSpinner = false,
   onClick,
-}: ButtonProps) {
+}: ButtonProps) => {
   const buttonEl = useRef<HTMLButtonElement>();
 
   const clicked = async (event: React.MouseEvent) => {
@@ -64,4 +64,4 @@ export function Button({
       {showSpinner ? <LoadingSpinner size='sm' /> : text}
     </button>
   );
-}
+};

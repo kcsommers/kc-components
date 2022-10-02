@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import React, { ReactNode } from 'react';
 import { IBaseThemeSchema, ITheme, THEME_LIGHT } from '../../../design/themes';
+import { ThemeProvider } from '../theme-context/ThemeProvider';
 import styles from './BaseTheme.module.scss';
-import { ThemeProvider } from './ThemeProvider';
 
 export interface BaseThemeProps extends React.HTMLAttributes<HTMLDivElement> {
   overrides?: Partial<IBaseThemeSchema>;

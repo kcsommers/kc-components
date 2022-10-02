@@ -1,7 +1,7 @@
 import { cloneDeep } from 'lodash';
 import React, { useState } from 'react';
 import { isPromise } from '../../../utils/type-guards/is-promise';
-import { useKeydown } from '../../hooks/use-keydown';
+import { useKeydown } from '../../../utils/hooks/use-keydown';
 import { Button, ButtonProps } from '../Button';
 import { Input, InputProps } from '../Input';
 

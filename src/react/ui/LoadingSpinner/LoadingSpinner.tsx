@@ -1,6 +1,5 @@
-import React from 'react';
 import { ThemeColorTypes } from '../../../design/themes/theme-color-types.type';
-import { useTheme } from '../../providers/base-theme/theme-context';
+import { useTheme } from '../../theme/theme-context/use-theme';
 import styles from './LoadingSpinner.module.scss';
 
 export type LoadingSpinnerProps = {

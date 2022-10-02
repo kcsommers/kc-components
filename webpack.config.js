@@ -28,9 +28,6 @@ module.exports = (env) => {
     //   extensions: ['.ts', '.tsx', '.js', '.scss'],
     //   plugins: [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })],
     // },
-    output: {
-      publicPath: process.env.ASSET_PATH || '/',
-    },
     module: {
       rules: [
         {
@@ -92,24 +89,25 @@ module.exports = (env) => {
     },
     plugins: [
       new ModuleFederationPlugin({
-        name: 'components',
-        filename: 'remoteEntry.js',
+        name: 'kc_components',
+        filename: 'kc-components-remoteEntry.js',
         remotes: {},
         exposes: {
-          './ui/Button': './src/react/ui/Button/Button.tsx',
-          './ui/Form': './src/react/ui/Form/Form.tsx',
-          './ui/Input': './src/react/ui/Input/Input.tsx',
-          './ui/LoadingSpinner':
-            './src/react/ui/LoadingSpinner/LoadingSpinner.tsx',
-          './ui/Navbar': './src/react/ui/Navbar/Navbar.tsx',
-          './hooks/use-keydown': './src/react/hooks/use-keydown.tsx',
-          '/providers/base-theme': './src/react/providers/base-theme/index.ts',
+          './ui/Button': './src/react/ui/Button/Button',
+          './ui/Form': './src/react/ui/Form/Form',
+          './ui/Input': './src/react/ui/Input/Input',
+          './ui/LoadingSpinner': './src/react/ui/LoadingSpinner/LoadingSpinner',
+          './ui/Navbar': './src/react/ui/Navbar/Navbar',
+          './utils': './src/utils/index',
+          './theme': [
+            './src/react/theme/BaseTheme/BaseTheme',
+            './src/react/theme/theme-context/theme-context',
+          ],
         },
         shared: {
           ...deps,
           react: {
             singleton: true,
-            eager: true,
             requiredVersion: deps.react,
           },
           'react-dom': {
@@ -124,8 +122,7 @@ module.exports = (env) => {
       }),
       new HtmlWebpackPlugin({
         // HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles
-        template: './index.html',
-        excludeChunks: ['components'],
+        template: './public/index.html',
       }),
       // new ForkTsCheckerWebpackPlugin({
       //   // Speeds up TypeScript type checking and ESLint linting (by moving each to a separate process)
