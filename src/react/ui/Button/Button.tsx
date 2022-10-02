@@ -47,7 +47,7 @@ export const Button = ({
     }
 
     const _btnWidth = buttonEl.current.getBoundingClientRect().width;
-    // buttonEl.current.style.minWidth = `${_btnWidth}px`;
+    buttonEl.current.style.minWidth = `${_btnWidth}px`;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [buttonEl]);
 

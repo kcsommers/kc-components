@@ -1,14 +1,13 @@
 name: GH Actions Test
 env:
-  ASSET_PATH: ${{ secrets.ASSET_PATH }}
   COMPONENTS_PATH: ${{ secrets.COMPONENTS_PATH }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   pull_request:
-    branches: [ never ]
+    branches: [never]
   merge_group:
-    branches: [ never ]
+    branches: [never]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
