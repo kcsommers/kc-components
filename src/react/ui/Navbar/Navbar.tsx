@@ -1,8 +1,8 @@
 import React from 'react';
 
 export type NavbarProps = {
-  childrenLeft: JSX.Element;
-  childrenRight: JSX.Element;
+  childrenLeft?: JSX.Element;
+  childrenRight?: JSX.Element;
 };
 
 export const Navbar = ({ childrenLeft, childrenRight }: NavbarProps) => {
