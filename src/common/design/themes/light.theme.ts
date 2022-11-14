@@ -41,6 +41,6 @@ export const THEME_LIGHT: ITheme = {
     onAccent2Color: backgroundColor,
     backgroundColor,
     bgOnBgColor,
-    foregroundColor,
-  },
+    foregroundColor
+  }
 };

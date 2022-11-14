@@ -13,12 +13,9 @@ module.exports = (env) => {
     entry: env.development ? './src/playground.tsx' : './src/index.tsx',
     ...(!env.development ? {} : { devtool: 'eval-source-map' }),
     resolve: {
-      extensions: ['.ts', '.tsx', '.js']
+      extensions: ['.ts', '.tsx', '.js', '.scss'],
+      plugins: [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })]
     },
-    // resolve: {
-    //   extensions: ['.ts', '.tsx', '.js', '.scss'],
-    //   plugins: [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })],
-    // },
     module: {
       rules: [
         {
@@ -79,43 +76,46 @@ module.exports = (env) => {
     plugins: [
       new ModuleFederationPlugin({
         name: 'kc_components',
-        filename: 'kc-components-remoteEntry.js',
+        filename: 'remoteEntry.js',
         remotes: {},
         exposes: {
-          './ui/Button': {
+          './react/ui/Button': {
             import: './src/react/ui/Button/Button',
             name: 'button'
           },
-          './ui/Form': {
+          './react/ui/Form': {
             import: './src/react/ui/Form/Form',
             name: 'form'
           },
-          './ui/Input': {
+          './react/ui/Input': {
             import: './src/react/ui/Input/Input',
             name: 'input'
           },
-          './ui/LoadingSpinner': {
+          './react/ui/LoadingSpinner': {
             import: './src/react/ui/LoadingSpinner/LoadingSpinner',
             name: 'loading-spinner'
           },
-          './ui/Navbar': {
+          './react/ui/Navbar': {
             import: './src/react/ui/Navbar/Navbar',
             name: 'navbar'
           },
-          './ui/Layout': {
+          './react/ui/Layout': {
             import: './src/react/ui/Layout/Layout',
             name: 'layout'
           },
-          './utils': './src/common/utils/index',
-          './theme': {
+          './common/utils': {
+            import: './src/common/utils/index',
+            name: 'utils'
+          },
+          './react/theme': {
             import: ['./src/react/design/theme/index'],
             name: 'theme'
           },
-          './design': {
+          './common/design': {
             import: './src/common/design/index',
             name: 'design'
           },
-          './global-styles': {
+          './common/global-styles': {
             import: './src/common/design/styles/base-styles/base-styles.scss',
             name: 'global-styles'
           }

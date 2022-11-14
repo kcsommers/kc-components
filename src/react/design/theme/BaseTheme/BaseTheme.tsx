@@ -1,10 +1,8 @@
 import classNames from 'classnames';
+import { IBaseThemeSchema } from 'kc_components/common/design/themes/base-theme-schema.interface';
+import { THEME_LIGHT } from 'kc_components/common/design/themes/light.theme';
+import { ITheme } from 'kc_components/common/design/themes/theme.interface';
 import React, { ReactNode } from 'react';
-import {
-  IBaseThemeSchema,
-  ITheme,
-  THEME_LIGHT
-} from '../../../../common/design/themes';
 import { ThemeProvider } from '../theme-context/ThemeProvider';
 import styles from './BaseTheme.module.scss';
 
@@ -27,10 +25,9 @@ export const BaseTheme = ({
       theme={theme}
       className={classNames(styles.theme, className)}
     >
-      <link
-        href='https://fonts.googleapis.com/css?family=Roboto+Mono'
-        rel='stylesheet'
-      />
+      {(theme.schema.fontUrls || []).map((url) => (
+        <link href={url} rel='stylesheet' />
+      ))}
       {children}
     </ThemeProvider>
   );

@@ -22,4 +22,5 @@ export interface IBaseThemeSchema {
   foregroundColor: string;
   backgroundColor: string;
   bgOnBgColor: string;
+  fontUrls?: string[];
 }

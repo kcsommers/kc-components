@@ -9,7 +9,7 @@ function App() {
         style={{
           minHeight: '100vh',
           backgroundColor: 'var(--background-color)',
-          color: 'var(--foreground-color)',
+          color: 'var(--foreground-color)'
         }}
       >
         <h1>KC Components</h1>

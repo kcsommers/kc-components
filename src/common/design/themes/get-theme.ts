@@ -6,7 +6,7 @@ import { ThemeNames } from './theme-names.type';
 export const getTheme = (theme: ThemeNames): ITheme => {
   const themes = {
     LIGHT: THEME_LIGHT,
-    DARK: THEME_DARK,
+    DARK: THEME_DARK
   };
 
   return themes[theme] || themes.LIGHT;
