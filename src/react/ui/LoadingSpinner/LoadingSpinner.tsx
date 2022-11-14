@@ -1,5 +1,5 @@
-import { ThemeColorTypes } from '../../../design/themes/theme-color-types.type';
-import { useTheme } from '../../theme/theme-context/use-theme';
+import { ThemeColorTypes } from '../../../common/design/themes/theme-color-types.type';
+import { useTheme } from '../../design/theme/theme-context/use-theme';
 import styles from './LoadingSpinner.module.scss';
 
 export type LoadingSpinnerProps = {
@@ -9,7 +9,7 @@ export type LoadingSpinnerProps = {
 
 export const LoadingSpinner = ({
   size = 'md',
-  color = 'primary',
+  color = 'primary'
 }: LoadingSpinnerProps) => {
   const { currentTheme, setCurrentTheme } = useTheme();
 
@@ -22,7 +22,7 @@ export const LoadingSpinner = ({
         borderLeftColor: currentTheme.schema[`${color}Color`],
         borderRightColor: currentTheme.schema[`${color}Color`],
         borderBottomColor: currentTheme.schema[`${color}Color`],
-        borderTopColor: currentTheme.schema[`lightColor`],
+        borderTopColor: currentTheme.schema[`lightColor`]
       }}
     ></div>
   );

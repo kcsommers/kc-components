@@ -7,7 +7,7 @@ import { ITheme } from './theme.interface';
  */
 
 const primaryColor = '#de5499';
-const accent1Color = '#eddcd9';
+const accent1Color = '#D7B2AB';
 const accent2Color = '#e99f4c';
 const foregroundColor = '#ffffff';
 const backgroundColor = '#313030';
@@ -41,6 +41,6 @@ export const THEME_DARK: ITheme = {
     onAccent2Color: foregroundColor,
     backgroundColor,
     bgOnBgColor,
-    foregroundColor,
-  },
+    foregroundColor
+  }
 };

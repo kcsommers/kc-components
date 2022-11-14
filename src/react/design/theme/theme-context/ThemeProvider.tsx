@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
-import { IBaseThemeSchema } from '../../../design/themes/base-theme-schema.interface';
-import { THEME_LIGHT } from '../../../design/themes/light.theme';
-import { ITheme } from '../../../design/themes/theme.interface';
+import { IBaseThemeSchema } from '../../../../common/design/themes/base-theme-schema.interface';
+import { THEME_LIGHT } from '../../../../common/design/themes/light.theme';
+import { ITheme } from '../../../../common/design/themes/theme.interface';
 import { THEME_CONTEXT } from './theme-context';
 
 export function computeCssVars(
@@ -38,7 +38,7 @@ export const ThemeProvider = ({
   const value = useMemo(() => {
     return {
       currentTheme,
-      setCurrentTheme,
+      setCurrentTheme
     };
   }, [currentTheme]);
 
@@ -46,7 +46,7 @@ export const ThemeProvider = ({
     <div
       style={{
         ...cssVars,
-        ...style,
+        ...style
       }}
       {...rest}
     >

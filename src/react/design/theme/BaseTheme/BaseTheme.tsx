@@ -1,6 +1,10 @@
 import classNames from 'classnames';
 import React, { ReactNode } from 'react';
-import { IBaseThemeSchema, ITheme, THEME_LIGHT } from '../../../design/themes';
+import {
+  IBaseThemeSchema,
+  ITheme,
+  THEME_LIGHT
+} from '../../../../common/design/themes';
 import { ThemeProvider } from '../theme-context/ThemeProvider';
 import styles from './BaseTheme.module.scss';
 
