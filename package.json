@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=production --env production --progress",
+    "build": "rm -rf dist && webpack --mode=production --env production --progress",
     "build-local": "rm -rf dist && npm run cpenv:prod && webpack --mode=production --env production --progress",
     "build-local:start": "npm run build && cd dist && PORT=3000 npx serve",
     "cpenv:dev": "cp .env.development .env",
@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/kcsommers/kc-components#readme",
   "dependencies": {
+    "@module-federation/fmr": "^0.0.7",
+    "@react-spring/web": "^9.6.0",
     "classnames": "^2.3.2",
     "color": "^4.2.3",
     "dotenv": "^16.0.2",

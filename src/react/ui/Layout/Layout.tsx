@@ -1,25 +1,14 @@
-import React from 'react';
-import { Navbar } from '../Navbar';
-import styles from './Layout.module.scss';
+import React, { PropsWithChildren } from 'react';
+import { Navbar, NavbarProps } from '../Navbar';
 
-export const Layout = ({ children }) => {
+export type LayoutProps = PropsWithChildren<{
+  navbarProps: NavbarProps;
+}>;
+
+export const Layout = ({ children, navbarProps }: LayoutProps) => {
   return (
-    <div className='flex-column' style={{ minHeight: '100vh' }}>
-      <Navbar
-        childrenLeft={<div>Logo Here</div>}
-        childrenRight={
-          <div>
-            <>
-              <a className={styles.nav_item} href='/login'>
-                Log In
-              </a>
-              <a className={styles.nav_item} href='/register'>
-                Register
-              </a>
-            </>
-          </div>
-        }
-      />
+    <div className='d-flex-column' style={{ minHeight: '100vh' }}>
+      {navbarProps && <Navbar {...navbarProps} />}
       <div className='flex-1'>{children}</div>
     </div>
   );

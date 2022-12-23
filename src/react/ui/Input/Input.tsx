@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { useState } from 'react';
 
 export type InputProps = {
   id: string;
@@ -10,13 +10,8 @@ export type InputProps = {
     text: string;
     for: string;
   };
-  validation?: {
-    required?: boolean;
-    pattern?: string;
-    min?: number;
-    max?: number;
-    message?: string;
-  };
+  errorMessage: string;
+  validator?: (value: string) => string; // return error message if invalid, nothing if valid
   onChange?: (e: React.ChangeEvent) => void;
 };
 
@@ -27,8 +22,8 @@ export const Input = ({
   id,
   placeholder,
   label,
-  validation,
-  onChange,
+  errorMessage,
+  onChange
 }: InputProps) => {
   const [inputValue, setInputValue] = useState(value);
 
@@ -49,21 +44,23 @@ export const Input = ({
   );
 
   return label ? (
-    <label htmlFor={label.for}>
-      <span className='flex'>
-        {label.text}
-        {validation?.message && (
-          <p className='text-sm color-danger text-light ml-05'>
-            {validation.message}
-          </p>
-        )}
-      </span>
+    <>
+      <label className='mb-05 cursor-pointer' htmlFor={label.for}>
+        <span className='d-inline-flex'>
+          {label.text}
+          {errorMessage && (
+            <p className='text-sm color-danger text-light ml-05'>
+              {errorMessage}
+            </p>
+          )}
+        </span>
+      </label>
       {inputEl}
-    </label>
+    </>
   ) : (
     <>
-      {validation?.message && (
-        <p className='text-sm mb-05 color-danger'>{validation.message}</p>
+      {errorMessage && (
+        <p className='text-sm mb-05 color-danger'>{errorMessage}</p>
       )}
       {inputEl}
     </>

@@ -1,2 +1,2 @@
-export * from './theme';
+export * from './design/theme';
 export * from './ui';

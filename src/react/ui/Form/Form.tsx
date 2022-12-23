@@ -1,7 +1,7 @@
+import { isPromise } from 'kc_components/common/utils/type-guards/is-promise';
 import { cloneDeep } from 'lodash';
 import React, { useState } from 'react';
-import { isPromise } from '../../../utils/type-guards/is-promise';
-import { useKeydown } from '../../../utils/hooks/use-keydown';
+import { useKeydown } from '../../utils/hooks/use-keydown';
 import { Button, ButtonProps } from '../Button';
 import { Input, InputProps } from '../Input';
 
@@ -23,7 +23,7 @@ export const Form = ({
   useCard = false,
   title,
   submitButton,
-  onSubmit,
+  onSubmit
 }: FormProps) => {
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
@@ -42,23 +42,19 @@ export const Form = ({
       [inputId: string]: FormInputConfig;
     } = {};
     Object.values(inputsMap).forEach((input) => {
-      if (!input.validation) {
-        return;
-      }
-      let message = '';
-      if (input.validation.required && !input.value && input.value !== 0) {
+      const errorMessage = input.validator && input.validator(input.value);
+      if (errorMessage) {
         isValid = false;
-        message = `*Required`;
       }
-      input.validation.message = message;
+      input.errorMessage = errorMessage;
       newMap[input.id] = input;
-      // @TODO rest of validations
     });
     setInputMap(newMap);
     return isValid;
   };
 
   const submitForm = (e: React.MouseEvent | KeyboardEvent) => {
+    e.preventDefault();
     const formValid = validateForm();
     if (!formValid) {
       return;

@@ -1,3 +1,3 @@
-export * from './design';
+export * from './common/design';
 export * from './react';
-export * from './utils';
+export * from './common/utils';
