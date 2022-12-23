@@ -16,6 +16,10 @@ module.exports = (env) => {
       extensions: ['.ts', '.tsx', '.js', '.scss'],
       plugins: [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })]
     },
+    // resolve: {
+    //   extensions: ['.ts', '.tsx', '.js', '.scss'],
+    //   plugins: [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })],
+    // },
     module: {
       rules: [
         {
