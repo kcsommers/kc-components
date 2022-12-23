@@ -8,7 +8,7 @@ export type NavbarProps = {
 export const Navbar = ({ childrenLeft, childrenRight }: NavbarProps) => {
   return (
     <nav className='border-bottom'>
-      <div className='flex flex-space-between p-2'>
+      <div className='d-flex flex-space-between p-2'>
         <div>{childrenLeft}</div>
         <div>{childrenRight}</div>
       </div>
