@@ -160,11 +160,15 @@ module.exports = (env) => {
           }
         }
       }),
-      new MFLiveReloadPlugin({
-        port: 4000, // the port your app runs on
-        container: 'kc_components', // the name of your app, must be unique
-        standalone: true // false uses chrome extention
-      }),
+      ...(env.development
+        ? [
+            new MFLiveReloadPlugin({
+              port: 4000, // the port your app runs on
+              container: 'kc_components', // the name of your app, must be unique
+              standalone: true // false uses chrome extention
+            })
+          ]
+        : []),
       new MiniCssExtractPlugin({
         filename: env.development ? '[name].css' : '[name].[hash].css',
         chunkFilename: env.development ? '[id].css' : '[id].[hash].css'
