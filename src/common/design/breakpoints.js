@@ -1,0 +1,11 @@
+export const PHONE_MAX = 644;
+export const TABLET_PORTRAIT_MIN = 645;
+export const TABLET_PORTRAIT_MAX = 744;
+export const TABLET_LANDSCAPE_MIN = 745;
+export const TABLET_LANDSCAPE_MAX = 1120;
+export const DESKTOP_MIN = 1121;
+export const DESKTOP_MAX = 1439;
+export const MID_DESKTOP_MIN = 1440;
+export const MID_DESKTOP_MAX = 1599;
+export const XL_DESKTOP_MIN = 1600;
+export const NAVBAR_COLLAPSE_BREAKPOINT = 992;

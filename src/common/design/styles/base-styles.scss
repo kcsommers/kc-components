@@ -1,0 +1,25 @@
+@import './colors.scss';
+@import './background-colors.scss';
+@import './reset.scss';
+@import './utils.scss';
+@import './position.scss';
+@import './dimensions.scss';
+@import './inputs.scss';
+@import './borders.scss';
+@import './responsive.scss';
+@import './flex.scss';
+@import './spacing.scss';
+@import './typography/typography.scss';
+@import './z-index.scss';
+@import './display.scss';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: var(--foreground-color);
+}
+
+body {
+  background-color: var(--background-color);
+}

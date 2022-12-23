@@ -17,6 +17,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "noImplicitAny": false,
+    "strictNullChecks": false,
     "paths": {
       "kc_components/react/*": ["src/react/*"],
       "kc_components/common/*": ["src/common/*"]

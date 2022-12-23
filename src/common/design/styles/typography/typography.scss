@@ -1,0 +1,201 @@
+// @import './typography-mixins.scss';
+// @import './text-breakpoints.scss';
+@import './text-colors.scss';
+// @import './text-sizing.scss';
+
+// // XL Type
+// .text-xl-1 {
+//   @include text_xl_1;
+// }
+
+// .text-xl-2 {
+//   @include text_xl_2;
+// }
+
+// .text-xl-3 {
+//   @include text_xl_3;
+// }
+
+// // HEADINGS
+// h1,
+// .h1,
+// .text-h1 {
+//   @include text_h1;
+// }
+// .google-h1 {
+//   font-size: $font-size-base;
+//   font-family: $font-family-sans-serif;
+//   font-weight: normal;
+// }
+
+// h2,
+// .h2,
+// .text-h2 {
+//   @include text_h2;
+// }
+
+// h3,
+// .h3,
+// .text-h3 {
+//   @include text_h3;
+// }
+
+// h4,
+// .h4,
+// .text-h4 {
+//   @include text_h4;
+// }
+
+// h5,
+// .h5,
+// .text-h5 {
+//   @include text_h5;
+// }
+
+// h6,
+// .h6,
+// .text-h6 {
+//   @include text_h6;
+// }
+
+// // BODY Text
+
+// .text-body-large {
+//   @include text_body_large;
+// }
+
+// .text-body-default,
+// .text-body-default-link,
+// .text-body-default-heavy {
+//   @include text_body_default;
+// }
+// .text-body-default-heavy {
+//   font-family: $font-family-heavy;
+// }
+
+// .text-body-small,
+// .text-body-small-heavy {
+//   @include text_body_small;
+// }
+// .text-body-small-heavy {
+//   font-family: $font-family-heavy;
+// }
+
+// .text-body-tiny,
+// .text-body-tiny-base,
+// .text-body-tiny-heavy {
+//   @include text_body_tiny;
+// }
+// .text-body-tiny-heavy {
+//   font-family: $font-family-heavy;
+// }
+// .text-body-tiny-base {
+//   font-family: $font-family-base;
+// }
+
+// .text-body-mini {
+//   @include text_body_mini;
+// }
+
+// b {
+//   font-family: $font-family-heavy;
+// }
+
+// em {
+//   font-style: italic;
+// }
+
+// a,
+// a:hover {
+//   cursor: pointer;
+// }
+
+// .text-mono {
+//   font-family: 'ABCSocialMono', monospace;
+// }
+
+.text-xs {
+  font-size: 12px;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.text-md {
+  font-size: 16px;
+}
+
+.text-lg {
+  font-size: 20px;
+}
+
+.text-xl {
+  font-size: 24px;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-normal {
+  font-weight: normal;
+}
+
+.text-light {
+  font-weight: lighter;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.color-primary {
+  color: var(--primary-color);
+}
+
+.color-accent1 {
+  color: var(--accent1-color);
+}
+
+.color-background {
+  color: var(--background-color);
+}
+
+.color-foreground {
+  color: var(--foreground-color);
+}
+
+.color-onPrimary {
+  color: var(--onPrimary-color);
+}
+
+.color-danger {
+  color: var(--danger-color);
+}
+
+.color-warning {
+  color: var(--warning-color);
+}
+
+.color-success {
+  color: var(--success-color);
+}
+
+a,
+p,
+div,
+span,
+label,
+input,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  text-decoration: none;
+  font-family: 'Open Sans', 'sans-serif';
+}

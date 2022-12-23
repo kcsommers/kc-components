@@ -1,0 +1,40 @@
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.d-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.d-inline-grid {
+  display: inline-grid;
+}
+
+.box-shadow {
+  box-shadow: var(--box-shadow);
+}
+
+.box-shadow-inset-bottom {
+  box-shadow: inset 0 -5px 5px -5px rgba(0, 0, 0, 0.5);
+}

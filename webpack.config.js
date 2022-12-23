@@ -91,6 +91,10 @@ module.exports = (env) => {
             import: './src/react/ui/Input/Input',
             name: 'input'
           },
+          './react/ui/ImageCrossfader': {
+            import: './src/react/ui/ImageCrossfader/ImageCrossfader',
+            name: 'image-crossfader'
+          },
           './react/ui/LoadingSpinner': {
             import: './src/react/ui/LoadingSpinner/LoadingSpinner',
             name: 'loading-spinner'
@@ -105,7 +109,23 @@ module.exports = (env) => {
           },
           './common/utils': {
             import: './src/common/utils/index',
-            name: 'utils'
+            name: 'common-utils'
+          },
+          './common/utils/dates/date-utils': {
+            import: './src/common/utils/dates/date-utils',
+            name: 'date-utils'
+          },
+          './common/utils/display/commafy-number': {
+            import: './src/common/utils/display/commafy-number',
+            name: 'commafy-number'
+          },
+          './common/utils/display/get-dollar-string': {
+            import: './src/common/utils/display/get-dollar-string',
+            name: 'get-dollar-string'
+          },
+          './common/utils/regex': {
+            import: './src/common/utils/regex/index',
+            name: 'common-regex'
           },
           './react/theme': {
             import: ['./src/react/design/theme/index'],
@@ -113,11 +133,15 @@ module.exports = (env) => {
           },
           './common/design': {
             import: './src/common/design/index',
-            name: 'design'
+            name: 'common-design'
           },
           './common/global-styles': {
-            import: './src/common/design/styles/base-styles/base-styles.scss',
+            import: './src/common/design/styles/base-styles.scss',
             name: 'global-styles'
+          },
+          './react/utils/hooks/use-interval': {
+            import: './src/react/utils/hooks/use-interval',
+            name: 'use-interval'
           }
         },
         shared: {
