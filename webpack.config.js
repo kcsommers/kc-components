@@ -5,8 +5,9 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const EnvironmentPlugin = require('webpack').EnvironmentPlugin;
-const deps = require('./package.json').dependencies;
 const { MFLiveReloadPlugin } = require('@module-federation/fmr');
+const { FederatedTypesPlugin } = require('@module-federation/typescript');
+const federationConfig = require('./module-federation/federation-config');
 
 module.exports = (env) => {
   return {
@@ -68,6 +69,11 @@ module.exports = (env) => {
               }
             }
           ]
+        },
+        {
+          // @TODO different loaders for react & common
+          test: /\.svg$/,
+          use: ['@svgr/webpack']
         }
       ]
     },
@@ -78,88 +84,8 @@ module.exports = (env) => {
       hot: true
     },
     plugins: [
-      new ModuleFederationPlugin({
-        name: 'kc_components',
-        filename: 'remoteEntry.js',
-        remotes: {},
-        exposes: {
-          './react/ui/Button': {
-            import: './src/react/ui/Button/Button',
-            name: 'button'
-          },
-          './react/ui/Form': {
-            import: './src/react/ui/Form/Form',
-            name: 'form'
-          },
-          './react/ui/Input': {
-            import: './src/react/ui/Input/Input',
-            name: 'input'
-          },
-          './react/ui/ImageCrossfader': {
-            import: './src/react/ui/ImageCrossfader/ImageCrossfader',
-            name: 'image-crossfader'
-          },
-          './react/ui/LoadingSpinner': {
-            import: './src/react/ui/LoadingSpinner/LoadingSpinner',
-            name: 'loading-spinner'
-          },
-          './react/ui/Navbar': {
-            import: './src/react/ui/Navbar/Navbar',
-            name: 'navbar'
-          },
-          './react/ui/Layout': {
-            import: './src/react/ui/Layout/Layout',
-            name: 'layout'
-          },
-          './common/utils': {
-            import: './src/common/utils/index',
-            name: 'common-utils'
-          },
-          './common/utils/dates/date-utils': {
-            import: './src/common/utils/dates/date-utils',
-            name: 'date-utils'
-          },
-          './common/utils/display/commafy-number': {
-            import: './src/common/utils/display/commafy-number',
-            name: 'commafy-number'
-          },
-          './common/utils/display/get-dollar-string': {
-            import: './src/common/utils/display/get-dollar-string',
-            name: 'get-dollar-string'
-          },
-          './common/utils/regex': {
-            import: './src/common/utils/regex/index',
-            name: 'common-regex'
-          },
-          './react/theme': {
-            import: ['./src/react/design/theme/index'],
-            name: 'theme'
-          },
-          './common/design': {
-            import: './src/common/design/index',
-            name: 'common-design'
-          },
-          './common/global-styles': {
-            import: './src/common/design/styles/base-styles.scss',
-            name: 'global-styles'
-          },
-          './react/utils/hooks/use-interval': {
-            import: './src/react/utils/hooks/use-interval',
-            name: 'use-interval'
-          }
-        },
-        shared: {
-          ...deps,
-          react: {
-            singleton: true,
-            requiredVersion: deps.react
-          },
-          'react-dom': {
-            singleton: true,
-            requiredVersion: deps['react-dom']
-          }
-        }
-      }),
+      // new ModuleFederationPlugin(federationConfig),
+      new FederatedTypesPlugin({ federationConfig }),
       ...(env.development
         ? [
             new MFLiveReloadPlugin({
@@ -182,6 +108,9 @@ module.exports = (env) => {
       //   // Speeds up TypeScript type checking and ESLint linting (by moving each to a separate process)
       // }),
       // new EnvironmentPlugin(['ASSET_PATH']),
-    ]
+    ],
+    infrastructureLogging: {
+      level: 'log'
+    }
   };
 };
