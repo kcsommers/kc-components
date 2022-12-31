@@ -1,11 +1,6 @@
 import Color from 'color';
 import { ITheme } from './theme.interface';
 
-/**
- * maintained by design tokens go here!
- * the designer.
- */
-
 const primaryColor = '#2b6777';
 const accent1Color = '#52ab98';
 const accent2Color = '#c8d8e4';
