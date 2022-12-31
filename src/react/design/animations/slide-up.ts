@@ -1,23 +1,16 @@
 import { easings } from '@react-spring/web';
 
-export const fadeInUp = (isVisible, configOverrides = {}) => {
+export const slideUp = (isVisible: boolean, configOverrides = {}) => {
   const animConfig = isVisible
     ? {
         from: {
-          opacity: 0,
-          y: '80px'
+          y: '100%'
         },
         to: {
-          opacity: 1,
-          y: '0px'
+          y: '0%'
         }
       }
-    : {
-        to: {
-          opacity: 0,
-          y: '80px'
-        }
-      };
+    : { to: { y: '100%' } };
   return {
     ...animConfig,
     config: {

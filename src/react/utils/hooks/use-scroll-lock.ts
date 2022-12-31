@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useScrollPosition } from 'kc_components/react/utils/hooks/use-scroll-position';
+import { useScrollPosition } from './use-scroll-position';
 
 export const useScrollLock = (toTopOnLock = false) => {
   const [scrollLocked, setScrollLocked] = useState(false);

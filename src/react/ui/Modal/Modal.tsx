@@ -1,9 +1,9 @@
 import { animated, easings, useTransition } from '@react-spring/web';
 import classNames from 'classnames';
-import CloseIcon from 'kc_components/common/icons/close.svg';
+import CloseIcon from 'kc_components/common/design/icons/close.svg';
 import { useOutsideClick } from 'kc_components/react/utils/hooks/use-outside-click';
 import { useScrollLock } from 'kc_components/react/utils/hooks/use-scroll-lock';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import styles from './Modal.module.scss';
 
 export const Modal = ({

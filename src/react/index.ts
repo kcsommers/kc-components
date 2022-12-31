@@ -1,2 +1,3 @@
-export * from './design/theme';
+export * from './design';
 export * from './ui';
+export * from './utils';

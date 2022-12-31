@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useDebounce } from 'kc_components/react/utils/hooks/use-debounce';
+import { useDebounce } from './use-debounce';
 
 export const useWindowSize = (listen = true, debounceDelay = 0) => {
   const [windowDims, setWindowDims] = useState({

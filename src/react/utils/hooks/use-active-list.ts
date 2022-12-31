@@ -3,14 +3,15 @@
  * The interval runs immediately, but the setIsActive function can be used
  * by the consumer to toggle it under certain conditions.
  *
+ * See activities and locations sections on home page for examples (10/22)
  */
 
 import { useEffect, useState } from 'react';
-import { useInterval } from 'kc_components/react/utils/hooks/use-interval';
+import { useInterval } from './use-interval';
 
 const DEFAULT_INTERVAL = 5000;
 
-export const useActiveList = (items, interval = DEFAULT_INTERVAL) => {
+export const useActiveList = (items: any[], interval = DEFAULT_INTERVAL) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeItem, setActiveItem] = useState(items[activeIndex]);
   const [isActive, setIsActive] = useState(true);

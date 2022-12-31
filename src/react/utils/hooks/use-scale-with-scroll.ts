@@ -1,11 +1,11 @@
 import { easings, useSpring } from '@react-spring/web';
 import { useEffect, useState } from 'react';
-import { useScrollPosition } from '../../hooks/use-scroll-position';
+import { useScrollPosition } from './use-scroll-position';
 
 const DEFAULT_SCALE = 0.8;
 
 export const useScaleWithScroll = (
-  listen,
+  listen: boolean,
   elementRef,
   initialScale = DEFAULT_SCALE
 ) => {

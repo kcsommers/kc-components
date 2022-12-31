@@ -45,7 +45,8 @@ export const useScrollPosition = (listen = true, elementRef) => {
 
   const position = {
     windowScrollY,
-    prevWindowScrollY
+    prevWindowScrollY,
+    elementDOMRect: null
   };
   if (elementRef) {
     position.elementDOMRect = elementDOMRect;

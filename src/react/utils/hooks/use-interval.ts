@@ -1,7 +1,11 @@
-import { useEffect, useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-export const useInterval = (callback, delay, immediate) => {
-  const savedCallback = useRef();
+export const useInterval = (
+  callback: Function,
+  delay: number,
+  immediate: boolean
+) => {
+  const savedCallback = useRef(callback);
   const intervalId = useRef(0);
   const [intervalIsRunning, setIntervalIsRunning] = useState(!!immediate);
 

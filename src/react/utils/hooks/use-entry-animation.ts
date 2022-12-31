@@ -1,6 +1,6 @@
 import { useSpring } from '@react-spring/web';
-import { useIntersectionObserver } from '../../hooks/use-intersection-observer';
-import { fadeInUp } from './fade-in-up';
+import { fadeInUp } from 'kc_components/react/design/animations/fade-in-up';
+import { useIntersectionObserver } from 'kc_components/react/utils/hooks/use-intersection-observer';
 
 /**
  *
