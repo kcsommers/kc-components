@@ -15,7 +15,10 @@ export type FormProps = {
   onSubmit?: (
     e: React.MouseEvent | KeyboardEvent,
     inputValues: FormInputConfig[]
-  ) => void | Promise<{ successMessage?: string; errorMessage?: string }>;
+  ) =>
+    | void
+    | Promise<{ successMessage?: string; errorMessage?: string }>
+    | Promise<void>;
 };
 
 export const Form = ({

@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from 'react';
 import { Navbar, NavbarProps } from '../Navbar';
 
 export type LayoutProps = PropsWithChildren<{
-  navbarProps: NavbarProps;
+  navbarProps?: NavbarProps;
 }>;
 
 export const Layout = ({ children, navbarProps }: LayoutProps) => {
