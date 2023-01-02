@@ -80,7 +80,7 @@ module.exports = (env) => {
     devServer: {
       port: 4000,
       open: true,
-      historyApiFallback: true,
+      historyApiFallback: false,
       hot: true
     },
     plugins: [

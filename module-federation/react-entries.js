@@ -36,35 +36,35 @@ module.exports = {
     name: 'react-ui'
   },
   './react/ui/Button': {
-    import: './src/react/ui/Button/index',
+    import: './src/react/ui/Button/Button',
     name: 'react-button'
   },
   './react/ui/Form': {
-    import: './src/react/ui/Form/index',
+    import: './src/react/ui/Form/Form',
     name: 'react-form'
   },
   './react/ui/ImageCrossfader': {
-    import: './src/react/ui/ImageCrossfader/index',
+    import: './src/react/ui/ImageCrossfader/ImageCrossfader',
     name: 'react-image-crossfader'
   },
   './react/ui/Input': {
-    import: './src/react/ui/Input/index',
+    import: './src/react/ui/Input/Input',
     name: 'react-input'
   },
   './react/ui/Layout': {
-    import: './src/react/ui/Layout/index',
+    import: './src/react/ui/Layout/Layout',
     name: 'react-layout'
   },
   './react/ui/LoadingSpinner': {
-    import: './src/react/ui/LoadingSpinner/index',
+    import: './src/react/ui/LoadingSpinner/LoadingSpinner',
     name: 'react-loading-spinner'
   },
   './react/ui/Modal': {
-    import: './src/react/ui/Modal/index',
+    import: './src/react/ui/Modal/Modal',
     name: 'react-modal'
   },
   './react/ui/Navbar': {
-    import: './src/react/ui/Navbar/index',
+    import: './src/react/ui/Navbar/Navbar',
     name: 'react-navbar'
   },
   './react/utils': {

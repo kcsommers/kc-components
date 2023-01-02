@@ -5,7 +5,6 @@ const deps = require('../package.json').dependencies;
 module.exports = {
   name: 'kc_components',
   filename: 'remoteEntry.js',
-  remotes: {},
   exposes: [
     ...Object.entries(commonEntries),
     ...Object.entries(reactEntries)
