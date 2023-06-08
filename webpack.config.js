@@ -37,40 +37,6 @@ module.exports = (env) => {
           exclude: /dist/
         },
         {
-          test: /\.module\.s(a|c)ss$/,
-          use: [
-            env.development ? 'style-loader' : MiniCssExtractPlugin.loader, // append to dom : externalize css
-            {
-              loader: 'css-loader', // process @import, url()
-              options: {
-                modules: true,
-                sourceMap: env.development
-              }
-            },
-            'postcss-loader',
-            {
-              loader: 'sass-loader', // scss to css
-              options: {
-                sourceMap: env.development
-              }
-            }
-          ]
-        },
-        {
-          test: /\.s(a|c)ss$/,
-          exclude: /\.module.(s(a|c)ss)$/,
-          use: [
-            env.development ? 'style-loader' : MiniCssExtractPlugin.loader,
-            'css-loader',
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: env.development
-              }
-            }
-          ]
-        },
-        {
           // @TODO different loaders for react & common
           test: /\.svg$/,
           use: ['@svgr/webpack']
@@ -78,7 +44,7 @@ module.exports = (env) => {
       ]
     },
     devServer: {
-      port: 4000,
+      port: 4001,
       open: true,
       historyApiFallback: false,
       hot: true
@@ -89,16 +55,16 @@ module.exports = (env) => {
       ...(env.development
         ? [
             new MFLiveReloadPlugin({
-              port: 4000, // the port your app runs on
+              port: 4001, // the port your app runs on
               container: 'kc_components', // the name of your app, must be unique
               standalone: true // false uses chrome extention
             })
           ]
         : []),
-      new MiniCssExtractPlugin({
-        filename: env.development ? '[name].css' : '[name].[hash].css',
-        chunkFilename: env.development ? '[id].css' : '[id].[hash].css'
-      }),
+      // new MiniCssExtractPlugin({
+      //   filename: env.development ? '[name].css' : '[name].[hash].css',
+      //   chunkFilename: env.development ? '[id].css' : '[id].[hash].css'
+      // }),
       new HtmlWebpackPlugin({
         // HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles
         template: './public/index.html',

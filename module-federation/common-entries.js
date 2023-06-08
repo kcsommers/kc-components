@@ -63,102 +63,6 @@ module.exports = {
     import: './src/common/design/icons/youtube.svg',
     name: 'common-icons-youtube'
   },
-  './common/design/styles': {
-    import: './src/common/design/styles/index',
-    name: 'common-styles'
-  },
-  './common/design/styles/typography': {
-    import: './src/common/design/styles/typography/typography.scss',
-    name: 'common-styles-typography'
-  },
-  './common/design/styles/background-colors': {
-    import: './src/common/design/styles/background-colors.scss',
-    name: 'common-styles-background-colors'
-  },
-  './common/design/styles/base-styles': {
-    import: './src/common/design/styles/base-styles.scss',
-    name: 'common-styles-base-styles'
-  },
-  './common/design/styles/borders': {
-    import: './src/common/design/styles/borders.scss',
-    name: 'common-styles-borders'
-  },
-  './common/design/styles/colors': {
-    import: './src/common/design/styles/colors.scss',
-    name: 'common-styles-colors'
-  },
-  './common/design/styles/dimensions': {
-    import: './src/common/design/styles/dimensions.scss',
-    name: 'common-styles-dimensions'
-  },
-  './common/design/styles/display': {
-    import: './src/common/design/styles/display.scss',
-    name: 'common-styles-display'
-  },
-  './common/design/styles/flex': {
-    import: './src/common/design/styles/flex.scss',
-    name: 'common-styles-flex'
-  },
-  './common/design/styles/inputs': {
-    import: './src/common/design/styles/inputs.scss',
-    name: 'common-styles-inputs'
-  },
-  './common/design/styles/position': {
-    import: './src/common/design/styles/position.scss',
-    name: 'common-styles-position'
-  },
-  './common/design/styles/reset': {
-    import: './src/common/design/styles/reset.scss',
-    name: 'common-styles-reset'
-  },
-  './common/design/styles/responsive': {
-    import: './src/common/design/styles/responsive.scss',
-    name: 'common-styles-responsive'
-  },
-  './common/design/styles/spacing': {
-    import: './src/common/design/styles/spacing.scss',
-    name: 'common-styles-spacing'
-  },
-  './common/design/styles/utils': {
-    import: './src/common/design/styles/utils.scss',
-    name: 'common-styles-utils'
-  },
-  './common/design/styles/z-index': {
-    import: './src/common/design/styles/z-index.scss',
-    name: 'common-styles-z-index'
-  },
-  './common/design/themes': {
-    import: './src/common/design/themes/index',
-    name: 'common-themes'
-  },
-  './common/design/themes/base-theme-schema': {
-    import: './src/common/design/themes/base-theme-schema.interface.ts',
-    name: 'common-base-theme-schema'
-  },
-  './common/design/themes/dark.theme': {
-    import: './src/common/design/themes/dark.theme.ts',
-    name: 'common-dark-theme'
-  },
-  './common/design/themes/get-theme': {
-    import: './src/common/design/themes/get-theme',
-    name: 'common-get-theme'
-  },
-  './common/design/themes/light.theme': {
-    import: './src/common/design/themes/light.theme.ts',
-    name: 'common-light-theme'
-  },
-  './common/design/themes/theme-color-types': {
-    import: './src/common/design/themes/theme-color-types.type.ts',
-    name: 'common-theme-color-types'
-  },
-  './common/design/themes/theme-names': {
-    import: './src/common/design/themes/theme-names.type.ts',
-    name: 'common-theme-names'
-  },
-  './common/design/themes/theme': {
-    import: './src/common/design/themes/theme.interface.ts',
-    name: 'common-theme'
-  },
   './common/design/breakpoints': {
     import: './src/common/design/breakpoints',
     name: 'common-design-breakpoints'
@@ -168,10 +72,6 @@ module.exports = {
     name: 'common-utils'
   },
   './common/utils/dates': {
-    import: './src/common/utils/dates/index',
-    name: 'common-dates'
-  },
-  './common/utils/dates/date-utils': {
     import: './src/common/utils/dates/index',
     name: 'common-dates'
   },

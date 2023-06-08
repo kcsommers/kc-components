@@ -19,54 +19,6 @@ module.exports = {
     import: './src/react/design/animations/slide-up',
     name: 'react-spring-slide-up'
   },
-  './react/design/theme': {
-    import: './src/react/design/theme/index',
-    name: 'react-theme'
-  },
-  './react/design/theme/base-theme': {
-    import: './src/react/design/theme/BaseTheme/BaseTheme',
-    name: 'react-base-theme'
-  },
-  './react/design/theme/theme-context': {
-    import: './src/react/design/theme/theme-context',
-    name: 'react-theme-context'
-  },
-  './react/ui': {
-    import: './src/react/ui/index',
-    name: 'react-ui'
-  },
-  './react/ui/Button': {
-    import: './src/react/ui/Button/Button',
-    name: 'react-button'
-  },
-  './react/ui/Form': {
-    import: './src/react/ui/Form/Form',
-    name: 'react-form'
-  },
-  './react/ui/ImageCrossfader': {
-    import: './src/react/ui/ImageCrossfader/ImageCrossfader',
-    name: 'react-image-crossfader'
-  },
-  './react/ui/Input': {
-    import: './src/react/ui/Input/Input',
-    name: 'react-input'
-  },
-  './react/ui/Layout': {
-    import: './src/react/ui/Layout/Layout',
-    name: 'react-layout'
-  },
-  './react/ui/LoadingSpinner': {
-    import: './src/react/ui/LoadingSpinner/LoadingSpinner',
-    name: 'react-loading-spinner'
-  },
-  './react/ui/Modal': {
-    import: './src/react/ui/Modal/Modal',
-    name: 'react-modal'
-  },
-  './react/ui/Navbar': {
-    import: './src/react/ui/Navbar/Navbar',
-    name: 'react-navbar'
-  },
   './react/utils': {
     import: './src/react/utils/index',
     name: 'react-utils'

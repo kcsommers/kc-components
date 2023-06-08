@@ -9,13 +9,12 @@ export const getDateDisplay = (
   if (!dateInput) {
     return '';
   }
-  if (typeof dateInput === 'number') {
-    dateInput = new Date(dateInput);
-  }
-  const year = dateInput.getFullYear();
-  const month = dateInput.getMonth();
-  const day = dateInput.getDay();
-  const date = dateInput.getDate();
+
+  const dateModel = new Date(dateInput);
+  const year = dateModel.getFullYear();
+  const month = dateModel.getMonth();
+  const day = dateModel.getDay();
+  const date = dateModel.getDate();
 
   switch (displayType) {
     case 'year':
