@@ -1,6 +1,3 @@
-import React from 'react';
-import { Button } from './react/ui/Button';
-
 function App() {
   return (
     <div className='App'>
@@ -13,7 +10,6 @@ function App() {
         }}
       >
         <h1>KC Components</h1>
-        <Button text='See em all' />
       </div>
     </div>
   );

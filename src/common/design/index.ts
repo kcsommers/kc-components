@@ -1,2 +1,3 @@
-export * from './styles';
-export * from './themes';
+export * from './icons';
+export * from './breakpoints';
+export * from './colors';

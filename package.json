@@ -9,7 +9,7 @@
     "build-local:start": "npm run build && cd dist && PORT=3000 npx serve",
     "cpenv:dev": "cp .env.development .env",
     "cpenv:prod": "cp .env.production .env",
-    "dev": "npm run cpenv:dev && webpack-cli serve --mode=development --env development --open",
+    "dev": "npm run build && rm -rf public/@mf-types && cp -R dist/@mf-types public/@mf-types && npm run cpenv:dev && webpack-cli serve --mode=development --env development --open",
     "start": "npm run dev",
     "test": "echo 'a test script should go here'"
   },
@@ -25,7 +25,9 @@
   "homepage": "https://github.com/kcsommers/kc-components#readme",
   "dependencies": {
     "@module-federation/fmr": "^0.0.7",
+    "@module-federation/typescript": "^2.1.1",
     "@react-spring/web": "^9.6.0",
+    "@svgr/webpack": "^6.5.1",
     "classnames": "^2.3.2",
     "color": "^4.2.3",
     "dotenv": "^16.0.2",
